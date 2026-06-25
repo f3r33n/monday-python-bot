@@ -1,0 +1,12 @@
+async def monday_say(channel, text):
+    """
+    Makes Monday feel more human by:
+    - showing typing indicator
+    - waiting a random amount of time
+    - then sending the message
+    """
+
+    async with channel.typing():
+        await asyncio.sleep(random.uniform(0.1, 0.7))
+
+    await channel.send(text)
